@@ -41,6 +41,8 @@ const Navbar = () => {
 
                 <>
 
+                    <Link to="/dashboard/myCart"><li><a className='md:hover:text-white md:text-neutral-content text-black'>Dashboard</a></li></Link>
+
                     <button onClick={handleLogOut} className='btn btn-warning btn-xs'>Logout</button>
 
                 </>

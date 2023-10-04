@@ -29,48 +29,113 @@ const SignUp = () => {
 
 
     // 1
-    const onSubmit = data => { 
+    // const onSubmit = data => {
 
-        console.log(data)
+    //     console.log(data)
+
+    //     createUser(data.email, data.password)
+
+    //         // 2
+    //         .then(result => {
+    //             const loggedUser = result.user;
+    //             console.log(loggedUser)
+
+    //             updateUserProfile(data.name, data.photoURL)
+
+    //                 // 3
+    //                 .then(() => {
+
+    //                     const saveUser = { name: data.name, email: data.email }
+
+
+    //                     // 5
+    //                     fetch('http://localhost:5000/user', {
+    //                         method: 'POST',
+    //                         // 6
+    //                         headers: {
+    //                             'content-type': 'application/json'
+
+    //                             // 6
+    //                         },
+    //                         body: JSON.stringify(saveUser)
+
+    //                         // 5
+    //                     })
+    //                         .then(res => res.json())
+    //                         .then(data => {
+    //                             if (data.inserted) {
+    //                                 console.log('Sign In')
+    //                                 reset();
+
+    //                                 // 4
+    //                                 Swal.fire({
+    //                                     position: 'top-end',
+    //                                     icon: 'success',
+    //                                     title: 'Your work has been saved',
+    //                                     showConfirmButton: false,
+    //                                     timer: 1500
+
+    //                                     // 4
+    //                                 })
+    //                                 navigate('/login');
+    //                             }
+    //                         })
+
+
+
+    //                     // 3
+    //                 })
+
+    //                 .catch(error => console.log(error))
+
+    //             // 2
+    //         })
+
+
+    //     // 1
+    // }
+
+
+
+    const onSubmit = data => {
 
         createUser(data.email, data.password)
+            .then(result => {
 
-        // 2
-        .then(result =>{
-            const loggedUser = result.user;
-            console.log(loggedUser)
+                const loggedUser = result.user;
+                console.log(loggedUser);
 
-            updateUserProfile(data.name, data.photoURL)
+                updateUserProfile(data.name, data.photoURL)
+                    .then(() => {
+                        const saveUser = { name: data.name, email: data.email }
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User created successfully.',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/login');
+                                }
+                            })
 
-            // 3
-            .then(()=>{
 
-                console.log('Sign In')
-                reset();
 
-                // 4
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Your work has been saved',
-                    showConfirmButton: false,
-                    timer: 1500
-
-                    // 4
-                  })
-                  navigate('/login');
-
-                // 3
+                    })
+                    .catch(error => console.log(error))
             })
-
-            .catch(error => console.log(error))
-
-            // 2
-        })
-        
-
-        // 1
-    }
+    };
 
     return (
         <div className='signUp-gradients-backgrounds'> <br /> <br />

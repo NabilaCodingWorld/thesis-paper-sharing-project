@@ -3,10 +3,53 @@ import { useForm } from 'react-hook-form';
 import './SubmitPaper.css'
 import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 
 const SubmitPaper = () => {
 
     const { register, handleSubmit, reset } = useForm();
+
+    const [axiosSecure] = useAxiosSecure();
+
+    const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
+
+
+    const onSubmit = data => {
+
+        const formData = new FormData();
+        formData.append('image', data.img[0])
+
+        fetch(img_hosting_url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(imgResponse => {
+                console.log(imgResponse)
+                if (imgResponse.success) {
+                    const imgURL = imgResponse.data.display_url;
+                    const { author, description, category } = data;
+                    const newItem = { author, description, category, img: imgURL }
+                    console.log(newItem);
+                    axiosSecure.post('/thesisPaper', newItem)
+                        .then(data => {
+                            console.log(data.data)
+                            if (data.data.insertedId) {
+                                reset()
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Your work has been saved',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+                        })
+                }
+            })
+    }
 
     return (
         <div className='submit-gradient-background'> <br /> <br />
@@ -18,7 +61,7 @@ const SubmitPaper = () => {
             </div>
             <div className="w-full p-10 flex justify-center items-center">
 
-                <form className='bg-white p-10 bg-opacity-10 rounded-xl animate-pulse'>
+                <form onSubmit={handleSubmit(onSubmit)} className='bg-white p-10 bg-opacity-10 rounded-xl animate-pulse'>
 
                     {/* Name */}
                     <div className="form-control w-[800px] mb-4">
@@ -37,7 +80,7 @@ const SubmitPaper = () => {
                         <label className="label">
                             <span className="label-text text-white ">Short Description</span>
                         </label>
-                        <textarea {...register("text", { required: true })} className="textarea textarea-bordered h-24" placeholder="Write Something"></textarea>
+                        <textarea {...register("description", { required: true })} className="textarea textarea-bordered h-24" placeholder="Write Something"></textarea>
                     </div>
 
                     {/* Image */}
@@ -45,7 +88,7 @@ const SubmitPaper = () => {
                         <label className="label">
                             <span className="label-text text-white ">Add a Image*</span>
                         </label>
-                        <input type="file" {...register("image", { required: true })} className="file-input file-input-bordered w-full " />
+                        <input type="file" {...register("img", { required: true })} className="file-input file-input-bordered w-full " />
                     </div>
 
                     {/* Category */}

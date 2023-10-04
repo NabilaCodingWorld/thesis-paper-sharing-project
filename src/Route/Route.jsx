@@ -11,6 +11,9 @@ import Login from "../Page/Login/Login";
 import SignUp from "../Page/SignUp/SignUp";
 import ThesisPaperDetail from "../Page/ThesisPaper/ThesisPaperDetail";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layout/Dashboard";
+import MyCart from "../Page/Dashboard/Mycart/MyCart";
+import AllUsers from "../Page/Dashboard/AllUsers/AllUsers";
 
 
 export const router = createBrowserRouter([
@@ -50,4 +53,19 @@ export const router = createBrowserRouter([
             },
         ]
     },
+
+    {
+        path: "/dashboard",
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        children: [
+            {
+                path: 'myCart',
+                element: <MyCart></MyCart>
+            },
+            {
+                path: 'user',
+                element: <AllUsers></AllUsers>
+            },
+        ]
+    }
 ]);
