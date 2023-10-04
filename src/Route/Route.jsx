@@ -14,6 +14,7 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
 import MyCart from "../Page/Dashboard/Mycart/MyCart";
 import AllUsers from "../Page/Dashboard/AllUsers/AllUsers";
+import ManagePaper from "../Page/ManagePaper/ManagePaper";
 
 
 export const router = createBrowserRouter([
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
             {
                 path: "/submit",
                 element: <PrivateRoute><SubmitPaper></SubmitPaper></PrivateRoute>
+            },
+            {
+                path: "/managePaper",
+                element: <PrivateRoute> <ManagePaper></ManagePaper> </PrivateRoute>
             },
             
             {

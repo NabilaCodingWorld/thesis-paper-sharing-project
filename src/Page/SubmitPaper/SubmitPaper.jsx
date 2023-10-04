@@ -56,7 +56,7 @@ const SubmitPaper = () => {
 
             <div className="divider text-4xl text-white">Share Your Documents and
                 <span>
-                    <Link to="/thesisEdit"><FaEdit></FaEdit></Link>
+                    <Link to="/managePaper"><FaEdit></FaEdit></Link>
                 </span>
             </div>
             <div className="w-full p-10 flex justify-center items-center">
