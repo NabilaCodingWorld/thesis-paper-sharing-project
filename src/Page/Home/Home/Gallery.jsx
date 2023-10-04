@@ -7,7 +7,7 @@ const Gallery = () => {
     const initialDisplayCount = 6;
 
     useEffect(() => {
-        fetch('thesisPaper.json')
+        fetch('http://localhost:5000/thesisPaper')
             .then(res => res.json())
             .then(data => setPhotos(data))
     }, [])
@@ -20,7 +20,7 @@ const Gallery = () => {
         <div>
             <div className="divider mt-20 md:text-4xl text-white">Gallery</div> <br /> <br />
 
-            <div className='grid md:grid-cols-3 gap-10'>
+            <div className='grid md:grid-cols-3 gap-10 mx-20'>
                 {
                     showAll
                         ? photos.map(photo => <Photo key={photo._id} photo={photo} />)

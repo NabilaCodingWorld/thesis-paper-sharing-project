@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaRegEye } from 'react-icons/fa';
 import './SignUp.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
+
+    const { createUser, updateUserProfile } = useContext(AuthContext)
 
     // show password
     const [showPassword, setShowPassword] = useState(false);
@@ -20,6 +24,54 @@ const SignUp = () => {
         formState: { errors },
     } = useForm();
 
+
+    const navigate = useNavigate();
+
+
+    // 1
+    const onSubmit = data => { 
+
+        console.log(data)
+
+        createUser(data.email, data.password)
+
+        // 2
+        .then(result =>{
+            const loggedUser = result.user;
+            console.log(loggedUser)
+
+            updateUserProfile(data.name, data.photoURL)
+
+            // 3
+            .then(()=>{
+
+                console.log('Sign In')
+                reset();
+
+                // 4
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+
+                    // 4
+                  })
+                  navigate('/login');
+
+                // 3
+            })
+
+            .catch(error => console.log(error))
+
+            // 2
+        })
+        
+
+        // 1
+    }
+
     return (
         <div className='signUp-gradients-backgrounds'> <br /> <br />
 
@@ -27,13 +79,13 @@ const SignUp = () => {
 
 
             <div className='flex justify-center items-center'> <br />
-                <form className="bg-white p-10 rounded-xl bg-opacity-10 animate-pulse">
+                <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-10 rounded-xl bg-opacity-10 animate-pulse">
 
                     {/* Name */}
                     <div className="mb-4">
 
                         <label className="block font-bold mt-4 text-white text-xl" htmlFor="message">
-                            Message
+                            Name:
                         </label>
 
                         <input
@@ -53,7 +105,7 @@ const SignUp = () => {
                     <div className="mb-4">
 
                         <label className="block font-bold mt-4 text-white text-xl" htmlFor="message">
-                            Message
+                            Email:
                         </label>
 
                         <input
@@ -71,7 +123,7 @@ const SignUp = () => {
                     {/* password */}
 
                     <label className="block font-bold mt-4 text-white text-xl" htmlFor="message">
-                        Message
+                        Password:
                     </label>
 
                     <div className="mb-4 text-black relative">
@@ -110,7 +162,7 @@ const SignUp = () => {
                     <div className="mb-4">
 
                         <label className="block font-bold mt-4 text-white text-xl" htmlFor="message">
-                            Message
+                            Photo URL:
                         </label>
 
                         <input

@@ -8,11 +8,14 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { router } from './Route/Route.jsx';
+import AuthProviders from './Providers/AuthProvider.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div style={{fontFamily: 'roboto'}}>
-      <RouterProvider router={router} />
+    <div style={{ fontFamily: 'roboto' }}>
+      <AuthProviders>
+        <RouterProvider router={router} />
+      </AuthProviders>
     </div>
   </React.StrictMode>,
 )

@@ -8,7 +8,7 @@ const Photo = ({ photo }) => {
         <div>
 
             <div className="group inline-block overflow-hidden relative">
-                <img className="h-80 transition-transform transform group-hover:scale-110" src={img} alt="" />
+                <img className="transition-transform transform group-hover:scale-110 " src={img} alt="" />
             </div>
 
             <p className='text-center text-white mt-2 text-xl'>{writter}</p>

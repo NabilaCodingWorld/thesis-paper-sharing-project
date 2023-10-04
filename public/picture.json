@@ -1,32 +1,32 @@
 [
     {
-        "_id": 1,
-        "img": "https://img.freepik.com/premium-photo/text-culture-typed-retro-typewriter-stock-image_132358-3545.jpg?size=626&ext=jpg&uid=R111737696&ga=GA1.2.442550854.1688050408&semt=ais",
-        "writter": "Miss Sofia"
+      
+        "name": "Miss Sofia",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aut cupiditate eaque soluta saepe vitae sed inventore eos quas aperiam ipsa nesciunt hic culpa, distinctio reiciendis at eveniet. Illo tenetur dolorum minima veritatis omnis quos explicabo ad asperiores, adipisci nobis est distinctio suscipit. Dolorum asperiores rerum vitae pariatur velit officia vero corrupti in doloremque! Fugit quae ipsam id. Quisquam, animi sit maxime eius commodi aspernatur ipsam molestiae ipsum, reprehenderit repellendus porro aperiam. Perspiciatis quibusdam et vitae commodi ducimus quidem explicabo possimus consequatur fuga dolorum omnis id autem sunt totam placeat sequi voluptatibus dolore quasi eius eveniet, dignissimos, tempore nobis optio voluptatem"
     },
     {
-        "_id": 2,
-        "img": "https://img.freepik.com/free-photo/old-books-closeup-with-copyspace-background-literature-concept_144627-36830.jpg?w=740&t=st=1696343046~exp=1696343646~hmac=90c9ef82454f689f3d1b986babaf05c40ad435685530213f2b1ae38d40ec7b63",
-        "writter": "Miss Sofia"
+     
+        "name": "Miss Sofia",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aut cupiditate eaque soluta saepe vitae sed inventore eos quas aperiam ipsa nesciunt hic culpa, distinctio reiciendis at eveniet. Illo tenetur dolorum minima veritatis omnis quos explicabo ad asperiores, adipisci nobis est distinctio suscipit. Dolorum asperiores rerum vitae pariatur velit officia vero corrupti in doloremque! Fugit quae ipsam id. Quisquam, animi sit maxime eius commodi aspernatur ipsam molestiae ipsum, reprehenderit repellendus porro aperiam. Perspiciatis quibusdam et vitae commodi ducimus quidem explicabo possimus consequatur fuga dolorum omnis id autem sunt totam placeat sequi voluptatibus dolore quasi eius eveniet, dignissimos, tempore nobis optio voluptatem"
     },
     {
-        "_id": 3,
-        "img": "https://img.freepik.com/free-photo/old-books-closeup-with-copyspace-background-literature-concept_144627-36830.jpg?w=740&t=st=1696343046~exp=1696343646~hmac=90c9ef82454f689f3d1b986babaf05c40ad435685530213f2b1ae38d40ec7b63",
-        "writter": "Miss Sofia"
+     
+        "name": "Miss Sofia",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aut cupiditate eaque soluta saepe vitae sed inventore eos quas aperiam ipsa nesciunt hic culpa, distinctio reiciendis at eveniet. Illo tenetur dolorum minima veritatis omnis quos explicabo ad asperiores, adipisci nobis est distinctio suscipit. Dolorum asperiores rerum vitae pariatur velit officia vero corrupti in doloremque! Fugit quae ipsam id. Quisquam, animi sit maxime eius commodi aspernatur ipsam molestiae ipsum, reprehenderit repellendus porro aperiam. Perspiciatis quibusdam et vitae commodi ducimus quidem explicabo possimus consequatur fuga dolorum omnis id autem sunt totam placeat sequi voluptatibus dolore quasi eius eveniet, dignissimos, tempore nobis optio voluptatem"
     },
     {
-        "_id": 4,
-        "img": "https://img.freepik.com/free-photo/old-books-closeup-with-copyspace-background-literature-concept_144627-36830.jpg?w=740&t=st=1696343046~exp=1696343646~hmac=90c9ef82454f689f3d1b986babaf05c40ad435685530213f2b1ae38d40ec7b63",
-        "writter": "Miss Sofia"
+       
+        "name": "Miss Sofia",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aut cupiditate eaque soluta saepe vitae sed inventore eos quas aperiam ipsa nesciunt hic culpa, distinctio reiciendis at eveniet. Illo tenetur dolorum minima veritatis omnis quos explicabo ad asperiores, adipisci nobis est distinctio suscipit. Dolorum asperiores rerum vitae pariatur velit officia vero corrupti in doloremque! Fugit quae ipsam id. Quisquam, animi sit maxime eius commodi aspernatur ipsam molestiae ipsum, reprehenderit repellendus porro aperiam. Perspiciatis quibusdam et vitae commodi ducimus quidem explicabo possimus consequatur fuga dolorum omnis id autem sunt totam placeat sequi voluptatibus dolore quasi eius eveniet, dignissimos, tempore nobis optio voluptatem"
     },
     {
-        "_id": 5,
-        "img": "https://img.freepik.com/free-photo/old-books-closeup-with-copyspace-background-literature-concept_144627-36830.jpg?w=740&t=st=1696343046~exp=1696343646~hmac=90c9ef82454f689f3d1b986babaf05c40ad435685530213f2b1ae38d40ec7b63",
-        "writter": "Miss Sofia"
+       
+        "name": "Miss Sofia",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aut cupiditate eaque soluta saepe vitae sed inventore eos quas aperiam ipsa nesciunt hic culpa, distinctio reiciendis at eveniet. Illo tenetur dolorum minima veritatis omnis quos explicabo ad asperiores, adipisci nobis est distinctio suscipit. Dolorum asperiores rerum vitae pariatur velit officia vero corrupti in doloremque! Fugit quae ipsam id. Quisquam, animi sit maxime eius commodi aspernatur ipsam molestiae ipsum, reprehenderit repellendus porro aperiam. Perspiciatis quibusdam et vitae commodi ducimus quidem explicabo possimus consequatur fuga dolorum omnis id autem sunt totam placeat sequi voluptatibus dolore quasi eius eveniet, dignissimos, tempore nobis optio voluptatem"
     },
     {
-        "_id": 6,
-        "img": "https://img.freepik.com/free-photo/old-books-closeup-with-copyspace-background-literature-concept_144627-36830.jpg?w=740&t=st=1696343046~exp=1696343646~hmac=90c9ef82454f689f3d1b986babaf05c40ad435685530213f2b1ae38d40ec7b63",
-        "writter": "Miss Sofia"
+       
+        "name": "Miss Sofia",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aut cupiditate eaque soluta saepe vitae sed inventore eos quas aperiam ipsa nesciunt hic culpa, distinctio reiciendis at eveniet. Illo tenetur dolorum minima veritatis omnis quos explicabo ad asperiores, adipisci nobis est distinctio suscipit. Dolorum asperiores rerum vitae pariatur velit officia vero corrupti in doloremque! Fugit quae ipsam id. Quisquam, animi sit maxime eius commodi aspernatur ipsam molestiae ipsum, reprehenderit repellendus porro aperiam. Perspiciatis quibusdam et vitae commodi ducimus quidem explicabo possimus consequatur fuga dolorum omnis id autem sunt totam placeat sequi voluptatibus dolore quasi eius eveniet, dignissimos, tempore nobis optio voluptatem"
     }
 ]

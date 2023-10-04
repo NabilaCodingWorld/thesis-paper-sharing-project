@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
+
+
+    const renderAvatar = () => {
+        if (user) {
+            return (
+                <div className="avatar">
+                    <div className="w-12 md:ml-40 ml-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <img src={user.photoURL} title={user.displayName} alt={user.displayName} />
+                    </div>
+                </div>
+            );
+        }
+
+    }
 
     const navOption = <>
         <Link to="/"><li><a className='hover:text-white'>Home</a></li></Link>
@@ -10,10 +33,23 @@ const Navbar = () => {
 
         <Link to="/contact"><li className='hover:text-white'><a className='hover:text-white'>Contact</a></li></Link>
 
-        
+
         <Link to="/submit"><li><a className='hover:text-white'>Submit Paper</a></li></Link>
-        
-        <Link to="/login"><li><a className='hover:text-white'>Login</a></li></Link>
+
+        {
+            user ?
+
+                <>
+
+                    <button onClick={handleLogOut} className='btn btn-warning btn-xs'>Logout</button>
+
+                </>
+
+                :
+                <><Link to="/login"><li><a className='hover:text-white'>LogIn</a></li></Link></>
+        }
+
+
     </>
 
     return (
@@ -37,8 +73,13 @@ const Navbar = () => {
                         {navOption}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
+
+                <div className="navbar-end mr-10">
+                    {user && (
+                        <div >
+                            {renderAvatar()}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

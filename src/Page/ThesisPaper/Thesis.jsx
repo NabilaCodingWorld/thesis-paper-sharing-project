@@ -22,7 +22,7 @@ const Thesis = ({paper}) => {
             </div>
 
             <p className='text-center mt-2 text-2xl'>{author}</p>
-            <p className='my-5 md:text-xl text-sm'>{truncatedDescription} <span className='text-blue-600'> <Link to={`/novel/${_id}`}> See More </Link> </span> </p>
+            <p className='my-5 md:text-xl text-sm'>{truncatedDescription} <span className='text-blue-600'> <Link to={`/thesisPaper/${_id}`}> See More </Link> </span> </p>
             <p className='text-xl'>Thesis Title: <span className='font-bold'>{category}</span> </p>
 
             <button className='btn btn-warning mt-5'>Download Paper</button>

@@ -9,6 +9,8 @@ import SubmitPaper from "../Page/SubmitPaper/SubmitPaper";
 import Contact from "../Page/Contact/Contact";
 import Login from "../Page/Login/Login";
 import SignUp from "../Page/SignUp/SignUp";
+import ThesisPaperDetail from "../Page/ThesisPaper/ThesisPaperDetail";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -25,9 +27,15 @@ export const router = createBrowserRouter([
                 element: <ThesisPaper></ThesisPaper>
             },
             {
-                path: "/submit",
-                element: <SubmitPaper></SubmitPaper>
+                path: "/thesisPaper/:_id",
+                element: <PrivateRoute><ThesisPaperDetail></ThesisPaperDetail></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/thesisPaper/${params._id}`)
             },
+            {
+                path: "/submit",
+                element: <PrivateRoute><SubmitPaper></SubmitPaper></PrivateRoute>
+            },
+            
             {
                 path: "/contact",
                 element: <Contact></Contact>

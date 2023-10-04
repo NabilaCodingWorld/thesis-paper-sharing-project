@@ -12,7 +12,7 @@ const ThesisPaper = () => {
     const [postsPerPage, setPostsPerPage] = useState(6);
 
     useEffect(() => {
-        fetch('thesisPaper.json')
+        fetch('http://localhost:5000/thesisPaper')
             .then(res => res.json())
             .then(data => setPapers(data))
     }, [])
