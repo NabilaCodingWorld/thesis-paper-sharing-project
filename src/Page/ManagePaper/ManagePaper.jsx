@@ -10,7 +10,7 @@ const ManagePaper = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/thesisPaper')
+        fetch('https://thesis-paper-sharing-project-server.vercel.app/thesisPaper')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])

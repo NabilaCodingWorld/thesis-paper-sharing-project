@@ -55,8 +55,8 @@ const Login = () => {
                     {/* email */}
                     <div className="mb-4">
 
-                        <label className="block font-bold mt-4 text-white text-xl" htmlFor="message">
-                            Message
+                        <label className="block font-bold mt-4 text-white text-xl" htmlFor="email">
+                            Email
                         </label>
 
                         <input
@@ -72,8 +72,8 @@ const Login = () => {
                     {/* password */}
                     <div className="mb-4">
 
-                        <label className="block font-bold mt-4 text-white text-xl" htmlFor="message">
-                            Message
+                        <label className="block font-bold mt-4 text-white text-xl" htmlFor="password">
+                            Password
                         </label>
 
                         <div className="relative">

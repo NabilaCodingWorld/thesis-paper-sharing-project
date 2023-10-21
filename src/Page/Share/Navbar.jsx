@@ -29,12 +29,12 @@ const Navbar = () => {
     const navOption = <>
         <Link to="/"><li><a className='hover:text-white'>Home</a></li></Link>
 
-        <Link to="/thesisPaper"><li><a className='hover:text-white'>Thesis Paper</a></li></Link>
+        {/* <Link to="/thesisPaper"><li><a className='hover:text-white'>PDF Paper</a></li></Link> */}
 
-        <Link to="/contact"><li className='hover:text-white'><a className='hover:text-white'>Contact</a></li></Link>
+        <Link to="/blog"><li className='hover:text-white'><a className='hover:text-white'>Blog</a></li></Link>
 
 
-        <Link to="/submit"><li><a className='hover:text-white'>Submit Paper</a></li></Link>
+        {/* <Link to="/submit"><li><a className='hover:text-white'>Submit Paper</a></li></Link> */}
 
         {
             user ?

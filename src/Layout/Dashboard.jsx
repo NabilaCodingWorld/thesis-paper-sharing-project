@@ -1,10 +1,19 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
+import { useContext } from 'react';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const Dashboard = () => {
 
     // const isAdmin = true;
+
+    const { user } = useContext(AuthContext);
+
+    if (!user || !user.photoURL) {
+        // Handle the case when user data is not available
+        return <div>Loading...</div>; // or display a login prompt
+    }
 
     const [isAdmin] = useAdmin();
 
@@ -21,24 +30,49 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                    <ul className="menu p-4 w-60  min-h-full bg-[#141F42] text-white text-xl font-bold">
 
 
                         {
                             isAdmin ?
                                 <>
-                                    <Link to="/dashboard/myCart"><li><a>Sidebar Item 1</a></li></Link>
 
-                                    <Link to="/dashboard/user"><li><a>All User</a></li></Link>
+                                    <center>
+                                        <div className="avatar">
+                                            <div className="w-24 mt-10 rounded-full">
+                                                <img src={user.photoURL} />
+                                            </div>
+                                        </div>
+                                    </center>
+
+                                    <p className='text-center text-xl mt-3 font-bold mb-10'>{user.displayName}</p>
+                                    <Link to="/dashboard/approve"><li><a className=' hover:text-white' >Approve Papper</a></li></Link>
+
+                                    <Link to="/dashboard/user"><li><a className=' hover:text-white'>All User</a></li></Link>
                                 </>
                                 :
 
                                 <>
-                                   
-                                    <Link to="/dashboard/myCart"><li><a>Sidebar Item 1</a></li></Link>
-                                    <li><a>Sidebar Item 2</a></li>
+
+                                    <center>
+                                        <div className="avatar">
+                                            <div className="w-24 mt-10 rounded-full">
+                                                <img src={user.photoURL} />
+                                            </div>
+                                        </div>
+                                    </center>
+
+                                    <p className='text-center text-xl mt-3 font-bold mb-10'>{user.displayName}</p>
+
+                                    <Link to="/dashboard/pdf"><li><a></a>Paper</li></Link>
+                                    <Link to="/dashboard/Managepdf"><li><a></a>Manage Paper</li></Link>
+
                                 </>
                         }
+
+
+                        <div className='border-t-4 border-indigo-500 mt-20'></div>
+                        <Link to="/"><li><a></a>Home</li></Link>
 
                     </ul>
 

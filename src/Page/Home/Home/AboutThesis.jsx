@@ -1,13 +1,34 @@
 import React from 'react';
+import giffi from '../../../assets/XoD7.gif'
 
 const AboutThesis = () => {
-    return (
-        <div>
-             <div className="divider mt-20 md:text-4xl text-white">About These Platform</div> <br />
 
-             <div  className=' bg-white bg-opacity-10 text-white p-10 mx-28 relative z-2 rounded-lg shadow-5xl animate-pulse hover:border '>
-                <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aut cupiditate eaque soluta saepe vitae sed inventore eos quas aperiam ipsa nesciunt hic culpa, distinctio reiciendis at eveniet. Illo tenetur dolorum minima veritatis omnis quos explicabo ad asperiores, adipisci nobis est distinctio suscipit. Dolorum asperiores rerum vitae pariatur velit officia vero corrupti in doloremque! Fugit quae ipsam id. Quisquam, animi sit maxime eius commodi aspernatur ipsam molestiae ipsum, reprehenderit repellendus porro aperiam. Perspiciatis quibusdam et vitae commodi ducimus quidem explicabo possimus consequatur fuga dolorum omnis id autem sunt totam placeat sequi voluptatibus dolore quasi eius eveniet, dignissimos, tempore nobis optio voluptatem! Laborum nam animi ad corporis debitis veritatis libero ratione, ea numquam. Cumque vel ipsa ipsum sunt nostrum dolorem laboriosam reprehenderit inventore. Fugit, illum dolorem explicabo sit adipisci nulla in voluptates nemo eligendi non minus quam vitae commodi nobis rerum iusto, accusantium iure? Mollitia sit odit dicta quam consequuntur minima vel, dolore, aut, eos modi repellat est excepturi quibusdam nulla iure sint eligendi obcaecati earum deleniti voluptatum incidunt accusamus amet corporis repellendus! Asperiores assumenda sit quaerat ab vel vitae corrupti. Id atque praesentium debitis nobis ullam nihil ipsam, quae provident rem autem quo culpa molestiae. Iste placeat doloremque est atque, delectus exercitationem fugiat rem neque, consequuntur illo aut nemo dignissimos, dolor officia obcaecati et. Excepturi, molestias modi perspiciatis sapiente numquam minus facilis officiis harum! Doloremque nam rem quis voluptatibus placeat accusamus quisquam dolorum mollitia ipsum reiciendis, dolore laboriosam consectetur ipsam nobis quibusdam est, consequuntur inventore unde blanditiis culpa ullam et expedita. Veniam libero reiciendis officiis obcaecati veritatis totam cupiditate adipisci rerum quam fuga cumque molestiae accusantium eum nesciunt, fugit temporibus </p>
-             </div> <br />
+    return (
+        <div className='my-20'>
+            <div className=' bg-white bg-opacity-10 text-white md:p-10 p-3 md:mx-28 mx-5 relative z-2 rounded-lg shadow-5xl  hover:border grid md:grid-cols-2 md:gap-10 gap-3 justify-center items-center'>
+
+
+                <img src={giffi} alt="" />
+
+                <div >
+                    <p className='text-pink-700 md:text-2xl font-bold text-center'>Our Goal</p>
+                    <p className='md:text-3xl text-white text-center mb-3 font-bold'>The Aim of Our Work</p>
+
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit deserunt dolor quas quos voluptatum aliquid ad, earum facere similique id eum esse minima eligendi necessitatibus ipsa sed, error eos est consequatur amet illum atque fugiat ullam perferendis! In id non et, sit soluta assumenda adipisci natus velit? Quidem doloremque labore amet exercitationem nostrum officiis. Iure nulla explicabo nesciunt earum! Accusamus dolore dolorem quos ipsum officia dolor optio exercitationem, ut amet minus accusantium ipsam eligendi, minima voluptatum totam obcaecati eveniet voluptate magni consequuntur atque? Expedita, quas sequi! Corporis vitae tempora assumenda aspernatur natus sed perferendis, sit iste beatae cupiditate temporibus ullam?</p>
+
+
+                    <div className='my-10'>
+                        <p className='flex gap-5'>
+                            <div class="pl-2 border-l-8 border-yellow-700 ... text-xl font-bold">20 + Shared Thesis </div> <br />
+
+                            <div class="pl-2 border-l-8 border-yellow-700 ... text-xl font-bold">25 + Latest Project Idea </div>
+                        </p>
+                    </div>
+
+                </div>
+
+
+            </div> <br />
         </div>
     );
 };

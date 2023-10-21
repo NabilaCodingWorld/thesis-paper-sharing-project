@@ -7,7 +7,7 @@ const Gallery = () => {
     const initialDisplayCount = 6;
 
     useEffect(() => {
-        fetch('http://localhost:5000/thesisPaper')
+        fetch('https://thesis-paper-sharing-project-server.vercel.app/thesisPaper')
             .then(res => res.json())
             .then(data => setPhotos(data))
     }, [])
@@ -23,8 +23,8 @@ const Gallery = () => {
             <div className='grid md:grid-cols-3 gap-10 mx-20'>
                 {
                     showAll
-                        ? photos.map(photo => <Photo key={photo._id} photo={photo} />)
-                        : photos.slice(0, initialDisplayCount).map(photo => <Photo key={photo._id} photo={photo} />)
+                        ? photos.map(myPhoto => <Photo key={myPhoto._id} myPhoto={myPhoto} />)
+                        : photos.slice(0, initialDisplayCount).map(myPhoto => <Photo key={myPhoto._id} myPhoto={myPhoto} />)
                 }
             </div>
 

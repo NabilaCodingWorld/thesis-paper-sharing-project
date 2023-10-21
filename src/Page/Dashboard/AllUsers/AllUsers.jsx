@@ -3,6 +3,7 @@ import React from 'react';
 import { FaTrashAlt, FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { Helmet } from 'react-helmet-async';
 
 const AllUsers = () => {
 
@@ -18,7 +19,7 @@ const AllUsers = () => {
 
 
         const handleMakeAdmin = user => {
-            fetch(`http://localhost:5000/users/admin/${user._id}`,{
+            fetch(`https://thesis-paper-sharing-project-server.vercel.app/users/admin/${user._id}`,{
                 method: 'PATCH'
             })
             .then(res => res.json())
@@ -53,7 +54,7 @@ const AllUsers = () => {
                 if (result.isConfirmed) {
                   
 
-                    fetch(`http://localhost:5000/users/admin/${user._id}`,{
+                    fetch(`https://thesis-paper-sharing-project-server.vercel.app/users/admin/${user._id}`,{
                         method: 'DELETE'
                     })
                     .then(res => res.json())
@@ -77,6 +78,8 @@ const AllUsers = () => {
 
     return (
         <div>
+            
+            <Helmet> <title> Thesis Paper | All User </title> </Helmet>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-[800px]">
                     {/* head */}

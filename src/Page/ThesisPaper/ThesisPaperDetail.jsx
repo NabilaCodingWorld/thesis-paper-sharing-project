@@ -1,54 +1,25 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import './ThesisPaperDetail.css'
 
 const ThesisPaperDetail = () => {
 
-    const thesisPaper = useLoaderData();
+    const thesis = useLoaderData();
 
-    const { img, author, description, category } = thesisPaper;
+    const {photo, author, category, message} = thesis;
 
     return (
-        <div className='thesis-detail-gradients-backgrounds'> <br />
-            <div className="divider text-4xl text-white">{category}</div> <br />
+        <div>
+            <p className='text-center text-white text-xl font-bold my-10'>{author}</p>
 
-            <center>
-                <div className="group inline-block overflow-hidden relative">
-                    <img className="h-80 transition-transform transform group-hover:scale-110" src={img} alt="" />
-                </div>
-                <p className='text-gray-300'>{author}</p> <br />
+            <p className='text-center text-white text-4xl font-bold my-10'>{category}</p>
+            
+            <center><img className='h-[400px] w-[80%] mb-10' src={photo} alt="" /></center>
 
-                <div className='bg-white mx-20 p-10 bg-opacity-10 rounded-xl text-white animate-pulse text-xl'>{description} <br /> <br />
-                
-                <button
-                    style={{
-                        background: 'linear-gradient(260deg, rgba(239, 13, 121, 1) 0%, rgba(174, 8, 140, 1) 71%)',
-                        color: '#fff',
-                        border: 'none',
-                        padding: '10px 20px',
-                        borderRadius: '5px',
-                        cursor: 'pointer',
-                    }}
-                    className='btn mt-3'>Download Paper</button>
-                </div> <br />
+            <p className='text-center text-white text-4xl font-bold my-10'>Description:</p>
 
-              
+            <p className='text-center text-white text-xl mb-10 md:mx-20 mx-5'>{message}</p>
 
-                <Link to="/thesisPaper">
-                    <button
-                        style={{
-                            background: 'linear-gradient(260deg, rgba(239, 13, 121, 1) 0%, rgba(174, 8, 140, 1) 71%)',
-                            color: '#fff',
-                            border: 'none',
-                            padding: '10px 20px',
-                            borderRadius: '5px',
-                            cursor: 'pointer',
-                        }}
-                        className='btn mt-3 ml-10'>Back</button>
-                </Link>
-
-
-            </center> <br />
+            <center> <button className='btn btn-warning'> <Link to='/'>Back to Home</Link> </button> </center> <br />
         </div>
     );
 };

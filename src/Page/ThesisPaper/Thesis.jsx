@@ -2,30 +2,37 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Thesis = ({paper}) => {
+const Thesis = ({ paper }) => {
 
-    const {img, author, description, category, _id} = paper;
+    const {picture, img, author, name, email, 
+        message, category, _id } = paper;
 
-    // Define a maximum character limit for the description
-    const maxDescriptionLength = 200;
-
-    // Truncate the description if it exceeds the maximum length
-    const truncatedDescription = description.length > maxDescriptionLength
-        ? description.slice(0, maxDescriptionLength) + '...' // Add ellipsis
-        : description;
+   
 
     return (
-        <div className='bg-white p-10 bg-opacity-5 rounded-lg text-white'>
+        <div className='hover:translate-y-2 hover:shadow-2xl duration-300'>
+            <div className='grid md:grid-cols-2 gap-5 justify-center items-center border-2 p-5  rounded-t-lg bg-white bg-opacity-30'>
+                <div className="avatar">
+                    <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <img src={picture} />
+                    </div>
+                </div>
 
-            <div className="group inline-block overflow-hidden relative">
-                <img className="h-80 transition-transform transform group-hover:scale-110" src={img} alt="" />
+                <div className='text-white'>
+                    <p>{name}</p>
+
+                    <p>{email}</p>
+                </div>
             </div>
 
-            <p className='text-center mt-2 text-2xl'>{author}</p>
-            <p className='my-5 md:text-xl text-sm'>{truncatedDescription} <span className='text-blue-600'> <Link to={`/thesisPaper/${_id}`}> See More </Link> </span> </p>
-            <p className='text-xl'>Thesis Title: <span className='font-bold'>{category}</span> </p>
+            <div className='border-2 p-5 text-center text-white rounded-b-lg'>
+                <p className='text-3xl my-3 font-bold'>{author}</p>
 
-            <button className='btn btn-warning mt-5'>Download Paper</button>
+
+                <Link to={`/thesisPaper/${_id}`}> <button className="btn btn-outline btn-primary btn-sm text-white mt-5 hover:w-36 duration-500">Read More</button> </Link>
+            </div>
+
+
         </div>
     );
 };
