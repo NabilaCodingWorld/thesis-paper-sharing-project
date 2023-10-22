@@ -13,10 +13,10 @@ const ThesisPaper = () => {
     const [postsPerPage, setPostsPerPage] = useState(6);
 
     useEffect(() => {
-        fetch('https://thesis-paper-sharing-project-server.vercel.app/thesisPaperAll')
+        fetch(' https://thesis-paper-sharing-project-server.vercel.app/confirmThesisPaperAll')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                console.log('approved papers',data)
                 setPapers(data)
             })
     }, [])
@@ -27,7 +27,7 @@ const ThesisPaper = () => {
 
 
     const handleSearch = () => {
-        fetch(`https://thesis-paper-sharing-project-server.vercel.app/paperSearch/${searchText}`)
+        fetch(` https://thesis-paper-sharing-project-server.vercel.app/paperSearch/${searchText}`)
             .then((res) => res.json())
             .then((data) => setPapers(data))
             .catch((error) => console.error('Error:', error));

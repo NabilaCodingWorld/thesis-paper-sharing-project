@@ -26,7 +26,7 @@ const UpdatePdf = () => {
         const submitData = {  photo, date,  author, category, message, _id: _id }
         console.log(submitData);
 
-        fetch(`https://thesis-paper-sharing-project-server.vercel.app/thesisPaper/${_id}`, {
+        fetch(` https://thesis-paper-sharing-project-server.vercel.app/thesisPaper/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

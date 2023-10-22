@@ -7,7 +7,7 @@ const Gallery = () => {
     const initialDisplayCount = 6;
 
     useEffect(() => {
-        fetch('https://thesis-paper-sharing-project-server.vercel.app/thesisPaper')
+        fetch(' https://thesis-paper-sharing-project-server.vercel.app/confirmThesisPaperAll')
             .then(res => res.json())
             .then(data => setPhotos(data))
     }, [])

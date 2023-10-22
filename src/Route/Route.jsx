@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
             {
           path: "/thesisPaper/:_id",
           element: <PrivateRoute> <ThesisPaperDetail></ThesisPaperDetail> </PrivateRoute>,
-          loader: ({ params }) => fetch(`https://thesis-paper-sharing-project-server.vercel.app/thesisPaper/${params._id}`)
+          loader: ({ params }) => fetch(` https://thesis-paper-sharing-project-server.vercel.app/thesisPaper/${params._id}`)
         },
             // {
             //     path: "/submit",
@@ -97,7 +97,7 @@ export const router = createBrowserRouter([
             {
                 path: 'Managepdf/update/:_id',
                 element: <PrivateRoute> <UpdatePdf></UpdatePdf> </PrivateRoute>,
-                loader: ({params}) => fetch(`https://thesis-paper-sharing-project-server.vercel.app/thesisPaper/${params._id}`)
+                loader: ({params}) => fetch(` https://thesis-paper-sharing-project-server.vercel.app/thesisPaper/${params._id}`)
               },
         ]
             

@@ -19,7 +19,7 @@ const AllUsers = () => {
 
 
         const handleMakeAdmin = user => {
-            fetch(`https://thesis-paper-sharing-project-server.vercel.app/users/admin/${user._id}`,{
+            fetch(` https://thesis-paper-sharing-project-server.vercel.app/users/admin/${user._id}`,{
                 method: 'PATCH'
             })
             .then(res => res.json())
@@ -54,7 +54,7 @@ const AllUsers = () => {
                 if (result.isConfirmed) {
                   
 
-                    fetch(`https://thesis-paper-sharing-project-server.vercel.app/users/admin/${user._id}`,{
+                    fetch(` https://thesis-paper-sharing-project-server.vercel.app/users/admin/${user._id}`,{
                         method: 'DELETE'
                     })
                     .then(res => res.json())

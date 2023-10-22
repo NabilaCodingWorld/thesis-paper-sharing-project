@@ -49,7 +49,7 @@ const SignUp = () => {
 
 
     //                     // 5
-    //                     fetch('https://thesis-paper-sharing-project-server.vercel.app/user', {
+    //                     fetch(' https://thesis-paper-sharing-project-server.vercel.app/user', {
     //                         method: 'POST',
     //                         // 6
     //                         headers: {
@@ -108,7 +108,7 @@ const SignUp = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email };
-                        fetch('https://thesis-paper-sharing-project-server.vercel.app/users', {
+                        fetch(' https://thesis-paper-sharing-project-server.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

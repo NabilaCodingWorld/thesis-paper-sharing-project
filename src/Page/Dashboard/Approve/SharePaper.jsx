@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SharePaper = ({ approve, handleConfirm }) => {
+const SharePaper = ({ approve, handleConfirm, handleDeleteApprove }) => {
     const { picture, photo, email, name, date, author, message, category, _id, status } = approve;
 
     return (
@@ -33,7 +33,7 @@ const SharePaper = ({ approve, handleConfirm }) => {
                         <button onClick={() => handleConfirm(_id)} className="btn btn-warning btn-xs">Please Confirm</button>
                     )}
 
-                    <button className='btn btn-error btn-sm text-white'>Delete</button>
+                    <button onClick={()=>handleDeleteApprove(_id)} className='btn btn-error btn-sm text-white'>Delete</button>
                 </div>
             </div> 
         </div>

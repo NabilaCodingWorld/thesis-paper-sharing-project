@@ -14,7 +14,7 @@ const ManagePdf = () => {
 
     const [pdf, setPdf] = useState([]);
 
-    const url = `https://thesis-paper-sharing-project-server.vercel.app/thesisPaper?email=${user?.email}`;
+    const url = ` https://thesis-paper-sharing-project-server.vercel.app/thesisPaper?email=${user?.email}`;
 
 
     useEffect(() => {
@@ -37,7 +37,7 @@ const ManagePdf = () => {
         }).then((result) => {
           if (result.isConfirmed) {
     
-            fetch(`https://thesis-paper-sharing-project-server.vercel.app/thesisPaper/${_id}`, {
+            fetch(` https://thesis-paper-sharing-project-server.vercel.app/confirmThesisPaperAll/${_id}`, {
               method: 'DELETE'
             })
               .then(res => res.json())

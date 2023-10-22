@@ -6,7 +6,7 @@ const ThesisIdea = () => {
     const [ideas, setIdeas] = useState([]);
 
     useEffect(() => {
-        fetch('https://thesis-paper-sharing-project-server.vercel.app/thesisIdea')
+        fetch(' https://thesis-paper-sharing-project-server.vercel.app/thesisIdea')
             .then(res => res.json())
             .then(data => setIdeas(data))
     }, [])

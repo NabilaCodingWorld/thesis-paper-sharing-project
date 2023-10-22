@@ -13,7 +13,7 @@ const Pdf = () => {
 
         event.preventDefault();
         const form = event.target;
-        
+
         const picture = form.picture.value;
         const photo = form.photo.value;
         const name = user?.displayName;
@@ -23,10 +23,11 @@ const Pdf = () => {
         const message = form.message.value;
         const category = form.category.value;
 
-        const submitData = {picture, photo, name, email, date, author, message, category }
+        // const submitData = {picture, photo, name, email, date, author, message, category }
+        const submitData = { picture, photo, name, email, date, author, message, category }
         console.log(submitData);
 
-        fetch('https://thesis-paper-sharing-project-server.vercel.app/thesisPaper', {
+        fetch(' https://thesis-paper-sharing-project-server.vercel.app/thesisPaper', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -40,7 +41,7 @@ const Pdf = () => {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Your work has been saved',
+                        title: 'Wait For the admin approval',
                         showConfirmButton: false,
                         timer: 1500
                     })
@@ -54,15 +55,15 @@ const Pdf = () => {
 
     return (
         <div>
-            
+
             <Helmet> <title> Thesis Paper | Paper </title> </Helmet>
-            <form  ref={formRef} onSubmit={handleSubmitPaper} className="mt-8 space-y-6">
+            <form ref={formRef} onSubmit={handleSubmitPaper} className="mt-8 space-y-6">
 
 
                 <div className='md:w-[500px]'>
 
                     <label className="block text-gray-700 text-sm font-bold">
-                      User  Photo:
+                        User  Photo:
                     </label>
                     <input
                         type="photoURL"
